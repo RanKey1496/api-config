@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: apiconfig
+  profiles:
+    active:
+    - dev
