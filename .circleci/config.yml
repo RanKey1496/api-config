@@ -1,0 +1,11 @@
+version: 2
+jobs:
+    build:
+        branches:
+            only:
+                - master
+        steps:
+            - checkout
+            - deploy:
+                name: NoMienteServer1
+                command: ssh -o "StrictHostKeyChecking no" ubuntu@18.237.76.165 "cd /home/api-config; git pull; docker build -t apiconfig .; docker run --name ApiConfig -d -p 8888:8888 apiconfig;"
