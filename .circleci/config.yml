@@ -4,6 +4,8 @@ jobs:
         branches:
             only:
                 - master
+        docker:
+            - image: maven
         steps:
             - checkout
             - deploy:
